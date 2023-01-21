@@ -3,7 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Collapse,
     Form, FormGroup, Label, Input, FormText, CardBody, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { path } from 'config.js'
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 
 export default class RSVP extends Component {
     constructor(props) {

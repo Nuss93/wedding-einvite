@@ -10,7 +10,7 @@ import "assets/css/argon-design-system-react.css";
 import './assets/css/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import "./assets/css/argon.css";
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
