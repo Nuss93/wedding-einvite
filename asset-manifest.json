@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.818f8f19.css",
+    "main.js": "/static/js/main.c8f7b28d.js",
+    "static/media/header.png": "/static/media/header.33933fb10b1f733e7065.png",
+    "static/media/back.png": "/static/media/back.2c103ddf39057635b492.png",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/nucleo-icons.svg": "/static/media/nucleo-icons.01ebecaf50461162d4bc.svg",
+    "static/media/map.png": "/static/media/map.0d83043f8cf308034ada.png",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/whatsapp.png": "/static/media/whatsapp.0dadc69a65af338471ba.png",
+    "static/media/waze.png": "/static/media/waze.69f1c9505801e8ce89f8.png",
+    "static/media/pin.png": "/static/media/pin.9d1b3c4d1b8d78d02ee8.png",
+    "static/media/gps.png": "/static/media/gps.5601c337676eef6ab244.png",
+    "static/media/nucleo-icons.eot": "/static/media/nucleo-icons.19abb5402a664606b14c.eot",
+    "static/media/nucleo-icons.ttf": "/static/media/nucleo-icons.d6a66724e7a7bf1bba65.ttf",
+    "static/media/nucleo-icons.woff": "/static/media/nucleo-icons.c82c9b7c40130b7116d3.woff",
+    "static/media/nucleo-icons.woff2": "/static/media/nucleo-icons.cba267483aa6a7cb6e33.woff2",
+    "index.html": "/index.html",
+    "main.818f8f19.css.map": "/static/css/main.818f8f19.css.map",
+    "main.c8f7b28d.js.map": "/static/js/main.c8f7b28d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.818f8f19.css",
+    "static/js/main.c8f7b28d.js"
+  ]
+}
