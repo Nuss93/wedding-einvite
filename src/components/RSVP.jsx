@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Collapse,
-    Form, FormGroup, Label, Input, FormText, CardBody, Col } from 'reactstrap';
+    Form, FormGroup, Label, Input, FormText, CardBody, Col, Row, Card } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { path } from 'config.js'
 import firebase from 'firebase';
@@ -15,7 +15,8 @@ export default class RSVP extends Component {
             response: '',
             time: '12pm - 1.30pm',
             name:'',
-            pax: 0,
+            paxOption: [1,2,3,4,5],
+            pax: 1,
             message:'',
         };
     }
@@ -32,7 +33,10 @@ export default class RSVP extends Component {
             modalReminder : !this.state. modalReminder,
         })
     }
-
+    selectPax = (pax) => {
+        // console.log('pax', pax);
+        this.setState({pax : pax})
+    }
     _markResponse = (response) => {
         this.setState({response: response})
     }
@@ -69,7 +73,7 @@ export default class RSVP extends Component {
                 message: message,
                 timestamp: firebase.database.ServerValue.TIMESTAMP
             }).then(() => {
-                this.setState({ response:'', name:'', pax:0, message:'', loadButt: false }, () => {
+                this.setState({ response:'', name:'', pax:1, message:'', loadButt: false }, () => {
                     this.props.parentRefresh()
                     this.toggleRSVP();
                 });
@@ -94,7 +98,7 @@ export default class RSVP extends Component {
                 message: message,
                 timestamp: firebase.database.ServerValue.TIMESTAMP
             }).then(() => {
-                this.setState({ response:'', name:'', pax:0, message:'', loadButt: false }, () => {
+                this.setState({ response:'', name:'', pax:1, message:'', loadButt: false }, () => {
                     this.props.parentRefresh()
                     this.toggleRSVP();
                 });
@@ -113,7 +117,7 @@ export default class RSVP extends Component {
         if(response !== ''){
             form_content =
             <div className="mt-4 mb-3">
-                {
+                {/* {
                     response === 'going' ?
                     <FormGroup>
                         <h6 className="mb-0 mt-4" style={{color:'red'}}>Important!</h6>
@@ -123,19 +127,28 @@ export default class RSVP extends Component {
                             <option value={"1.30pm - 3pm"}>1.30pm - 3pm</option>
                         </Input>
                     </FormGroup> : null
-                }
+                } */}
 
                 <FormGroup>
                     <Label for='name'><span style={{fontSize:'1.3rem'}}>Name</span></Label>
                     <Input type='text' name='name' id='name' onChange={this.handleChange}/>
                 </FormGroup>
 
-                {
+                {/* {
                     response === 'going' ?
                     <FormGroup>
-                        <Label for='pax'><span style={{fontSize:'1.3rem'}}>Will you be bringing a plus one? If yes, please mention how many.</span><br/>(Spouse, partner, family member)</Label>
+                        <Label for='pax'><span style={{fontSize:'1.3rem'}}>Will you be bringing a plus one? If yes, please mention how many.</span></Label>
                         <Input type='number' name='pax' id='pax' onChange={this.handleChange}/>
                     </FormGroup> : null
+                } */}
+                {
+                    response === 'going' ? 
+                    <div>
+                        <Label for='pax'><span style={{fontSize:'1.3rem'}}>How many people are attending? (including yourself)</span></Label>
+                        <Row className='m-1'>
+                            {this.state.paxOption.map((data,index) => <Col key={index} className="p-1" onClick={() => {this.selectPax(data)}}><Card body style={{color:'#8C9EB8', fontWeight: '700', fontSize: '16px', textAlign: 'center', backgroundColor: data === this.state.pax ? '#464F66' : null}}>{data}</Card></Col>)}
+                        </Row>
+                    </div>: null
                 }
 
                 <FormGroup className="mb-3">
@@ -177,7 +190,7 @@ export default class RSVP extends Component {
         
         return (
             <div>
-                <Button onClick={this.toggleREMINDER} color="primary" style={{...styles.RSVP, margin:'0'}}>RSVP</Button>
+                <Button onClick={this.toggleRSVP} color="primary" style={{...styles.RSVP, margin:'0'}}>RSVP</Button>
 
                 {/* ===toggleRSVP=== */}
                 <Modal className="modal-dialog-centered modal-default" style={{maxWidth:'425px', color:'white'}} isOpen={this.state.modalRSVP} toggle={this.toggleRSVP}>
@@ -190,7 +203,7 @@ export default class RSVP extends Component {
                     <ModalFooter>
                         {this._renderButton()}{' '}
                         <Button className='ml-auto text-white' color='link' onClick={() => {
-                            this.setState({ response:'', name:'', pax:0, message:'' });
+                            this.setState({ response:'', name:'', pax:1, message:'' });
                             this.toggleRSVP();
                         }}>Cancel</Button>
                     </ModalFooter>

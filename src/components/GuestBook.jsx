@@ -10,7 +10,7 @@ export default class GuestBook extends Component {
         let SORT = this.props.data.sort((a,b) => b.timestamp - a.timestamp)
 
         display = this.props.data.length !== 0 ? 
-            <div className="container-scroll no-padding pr-1" style={{maxHeight:'250px', overflowY:'scroll'}}>
+            <div className="container-scroll no-padding pr-1" style={{maxHeight:'320px', overflowY:'scroll'}}>
                 {SORT.map((data,index) => (
                     <div key={index} className="p-3"
                         style={{

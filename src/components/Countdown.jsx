@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col } from 'reactstrap';
 
 export default class Countdown extends Component {
-    state = { countDownDate: new Date("6 November 2021"), days: 0, hours: 0, minutes: 0, seconds: 0 }
+    state = { countDownDate: new Date("25 January 2024"), days: 0, hours: 0, minutes: 0, seconds: 0 }
 
     componentWillUnmount() {
         clearInterval(this.myInterval);
