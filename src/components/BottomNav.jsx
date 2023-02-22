@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import WASEP from 'assets/img/whatsapp.svg'
-import WAZE from 'assets/img/waze.svg'
-import MAP from 'assets/img/pin.svg';
-import PHONE from 'assets/img/phone.svg'
+import WASEP from 'assets/img/whatsapp.png'
+import WAZE from 'assets/img/waze.png'
+import MAP from 'assets/img/pin.png';
+// import PHONE from 'assets/img/phone.svg'
 
-import GOOGLE from 'assets/img/gps.svg';
-import WAZE_COL from 'assets/img/waze-color.svg';
+import GOOGLE from 'assets/img/gps.png';
+// import WAZE_COL from 'assets/img/waze-color.svg';
 
 import RSVP from 'components/RSVP.jsx';
 
@@ -21,11 +21,6 @@ class BottomNav extends Component {
         return (
             <div className=" bg-default App-nav-bottom" style={{color:'white', position:'fixed', bottom:'0', height:'80px', padding:'10px', boxShadow: '0 -3px 6px rgba(0,0,0,0.16), 0 -3px 6px rgba(0,0,0,0.23)'}}>
                 <div className="d-flex justify-content-around align-items-start">
-                    {/* https://www.waze.com/ul?ll=3.1579%2C101.6202&navigate=yes&zoom=17 */}
-                    {/* <NavLink style={{padding:'0'}} href="https://www.waze.com/ul?ll=3.1579%2C101.6202&navigate=yes&zoom=17">
-                        <img src={WAZE} style={{height:'calc(55px - 30px)'}} />
-                        <div style={{color:'white'}}>Waze</div>
-                    </NavLink> */}
                     <div style={{padding:'0'}} onClick={() => {this.toggleModal('NavigateModal')}}>
                         <img src={MAP} style={{height:'calc(55px - 30px)'}} />
                         <div>Directions</div>
@@ -40,7 +35,7 @@ class BottomNav extends Component {
                         <div>WhatsApp</div>
                     </div>
                 </div>
-                <div style={{color:'white', marginTop:'1rem', fontSize:'0.8rem', lineHeight:'1'}}>
+                <div style={{color:'white', marginTop:'1rem', fontSize:'0.8rem', lineHeight:'1', position: 'absolute', bottom: '15px', left: '50%', transform: 'translateX(-50%)'}}>
                     Designed and developed by The Bride
                 </div>
 
@@ -57,7 +52,7 @@ class BottomNav extends Component {
                             </Col>
                             <Col className="pl-2">
                                 <a href={'https://www.waze.com/ul?place=ChIJv8D0HjNPzDERs5wQQ2MhFyA&ll=3.16461380%2C101.61357680&navigate=yes&zoom=17'} target='_blank' style={styles.navigate} className="text-default bg-white">
-                                    <img src={WAZE_COL} style={{height:'calc(55px - 30px)', marginRight:'15px'}} />
+                                    <img src={WAZE} style={{height:'calc(55px - 30px)', marginRight:'15px'}} />
                                     <div style={{textAlign:'right'}}>Open Waze</div>
                                 </a>
                             </Col>
@@ -72,14 +67,9 @@ class BottomNav extends Component {
                 <Modal className='modal-dialog-centered modal-default' style={{maxWidth:'425px', color:'white'}} isOpen={this.state.WSModal} toggle={() => {this.toggleModal('WSModal')}}>
                     <ModalHeader toggle={() => {this.toggleModal('WSModal')}}>Choose number to Whatsapp</ModalHeader>
                     <ModalBody>
-                        <a href={'https://wa.me/60122927350'} target='_blank' style={styles.wasepbutton} className="bg-gradient-white text-default">
-                            <div>Datin Dr. Suzet</div>
-                            <div>+60122927350</div>
-                        </a>
-
-                        <a href={'https://wa.me/60122838344'} target='_blank' style={styles.wasepbutton} className="bg-gradient-white text-default">
-                            <div>Dato' Dr. Razak</div>
-                            <div>+60122838344</div>
+                        <a href={'https://wa.me/60172577440'} target='_blank' style={styles.wasepbutton} className="bg-gradient-white text-default">
+                            <div>Nasreen</div>
+                            <div>+60172577440</div>
                         </a>
                     </ModalBody>
                     <ModalFooter>

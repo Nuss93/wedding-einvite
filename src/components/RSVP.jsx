@@ -232,7 +232,7 @@ export default class RSVP extends Component {
 const styles = {
     RSVP : {
         fontWeight:'bold',
-        background: '#927878',
+        background: '#97B1B7',
         position: 'absolute',
         top: '-35px',
         left:'50%',

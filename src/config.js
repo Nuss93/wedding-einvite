@@ -1,11 +1,11 @@
-var path = 'alyaximadi'
+var path = 'nasreenxfaridz'
 var features = {
     countDown: true,
     giftList: true,
     quotes: true,
     guestBook: true,
     calendar: true,
-    SOP: true,
+    SOP: false,
 }
 
 export { path, features }
